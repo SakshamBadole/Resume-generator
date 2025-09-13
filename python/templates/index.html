@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        .form-section {
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .form-section h2 {
+            margin-top: 0;
+            color: #555;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            resize: vertical;
+        }
+        textarea {
+            min-height: 80px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Resume Generator</h1>
+        <form action="/generate" method="post">
+
+            <div class="form-section">
+                <h2>Personal Information</h2>
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+                <br><br>
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone" name="phone">
+                <br><br>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email">
+                <br><br>
+                <label for="linkedin">LinkedIn URL</label>
+                <input type="text" id="linkedin" name="linkedin">
+            </div>
+
+            <div class="form-section">
+                <h2>Career Objective</h2>
+                <textarea id="objective" name="objective" placeholder="Enter your career objective..."></textarea>
+            </div>
+
+            <div class="form-section">
+                <h2>Education</h2>
+                <textarea id="education" name="education" placeholder="Enter each education entry on a new line (e.g., B.Tech in Computer Science, University, 2024-2027)"></textarea>
+            </div>
+
+            <div class="form-section">
+                <h2>Skills</h2>
+                <label for="skills_programming">Programming Skills</label>
+                <input type="text" id="skills_programming" name="skills_programming">
+                <br><br>
+                <label for="skills_web">Web Skills</label>
+                <input type="text" id="skills_web" name="skills_web">
+                <br><br>
+                <label for="skills_tools">Tools</label>
+                <input type="text" id="skills_tools" name="skills_tools">
+            </div>
+
+            <div class="form-section">
+                <h2>Experience</h2>
+                <textarea id="experience" name="experience" placeholder="Enter each work experience entry on a new line..."></textarea>
+            </div>
+            
+            <div class="form-section">
+                <h2>Projects</h2>
+                <textarea id="projects" name="projects" placeholder="Enter each project on a new line..."></textarea>
+            </div>
+
+            <div class="form-section">
+                <h2>Certifications</h2>
+                <textarea id="certifications" name="certifications" placeholder="Enter each certification on a new line..."></textarea>
+            </div>
+
+            <div class="form-section">
+                <h2>Languages</h2>
+                <input type="text" id="languages" name="languages" placeholder="e.g., English (Fluent), Spanish (Conversational)">
+            </div>
+
+            <div class="form-section">
+                <h2>Hobbies</h2>
+                <input type="text" id="hobbies" name="hobbies" placeholder="e.g., Reading, Hiking, Photography">
+            </div>
+
+            <button type="submit">Generate Resume</button>
+        </form>
+    </div>
+</body>
+</html>
